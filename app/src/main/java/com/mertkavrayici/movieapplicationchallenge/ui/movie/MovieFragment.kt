@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.mertkavrayici.movieapplicationchallenge.MovieViewModel
@@ -37,6 +39,11 @@ class MovieFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         setRecyclerView()
+
+
+
+
+
 
         binding.movieSearch.setOnQueryTextListener(object :
             SearchView.OnQueryTextListener {

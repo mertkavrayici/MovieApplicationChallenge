@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.mertkavrayici.movieapplicationchallenge.MovieViewModel
 import com.mertkavrayici.movieapplicationchallenge.databinding.FragmentDetailsBinding
+import com.mertkavrayici.movieapplicationchallenge.ui.movie.MovieFragmentDirections
 import com.mertkavrayici.movieapplicationchallenge.utils.Status
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -41,7 +42,10 @@ class DetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         binding.backPress.setOnClickListener {
-            findNavController().popBackStack()
+
+            val action=DetailsFragmentDirections.actionDetailsFragmentToMovieFragment()
+            findNavController().navigate(action)
+
         }
 
      viewModel.getMovieDetails(args.pass!!)
